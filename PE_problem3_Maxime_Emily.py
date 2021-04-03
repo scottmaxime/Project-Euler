@@ -14,12 +14,19 @@ ourNumber = 600851475143
 
 
 while index <= ourNumber:
-    HighestPossibleDivisor = int(math.sqrt(index))
-    if ourNumber%index == 0:
+    HighestPossibleDivisor = int(math.sqrt(ourNumber))
+    
+    if ourNumber%index == 0 :
         PrimeDivisors.append(index)
         while ourNumber%index == 0:
-            ourNumber = ourNumber/index
+            ourNumber = ourNumber//index
+    
     index += 1
+    
+    if index > HighestPossibleDivisor:
+        PrimeDivisors.append(ourNumber)
+        break
+
 
 #print(PrimeDivisors)
 print(max(PrimeDivisors))
